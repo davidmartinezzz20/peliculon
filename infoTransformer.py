@@ -19,10 +19,12 @@ for filmInfo in filmsInfo:
     filmName = filmInfo.find('figcaption').text.strip()
     filmHref = filmInfo.find('a', href=True)
     filmHref = URL+filmHref['href']
-    filmDate = filmInfo.find('h3', class_='releaseDay').text.strip()
-
+    filmImage = filmInfo.find('img', src=True).get("src")
+    filmDate = filmInfo.find('h3', class_='releaseDay').text.strip().replace("\n","")
+    filmDate = filmDate.split(" ")
+    filmDate = list(filter(None, filmDate))
+    filmDate = ' '.join(filmDate)
+    
     # Write each movie to a list
-    line = {'Name':filmName, 'URL':filmHref, 'Release date':filmDate}
+    line = {'Name':filmName, 'URL':filmHref, 'Release date':filmDate, 'Image':filmImage}
     d.append(line)
-
-print(d)
