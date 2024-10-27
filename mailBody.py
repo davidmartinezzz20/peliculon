@@ -6,7 +6,7 @@ body_start = """
 <head>
 </head>
     <body>
-        <h1 style="text-decoration: underline black">Las news:</h1>
+        <h1 style="text-decoration: underline black">Las peli:</h1>
         <p></p>
 """
 content = []
