@@ -12,6 +12,7 @@ filmsInfo = soup.find_all('article', class_='releaseDate')
 #filmsDates = soup.find_all('h3', class_='releaseDay')
 
 d = []
+mailContent = []
 
 for filmInfo in filmsInfo:
 
@@ -28,3 +29,15 @@ for filmInfo in filmsInfo:
     # Write each movie to a list
     line = {'Name':filmName, 'URL':filmHref, 'Release date':filmDate, 'Image':filmImage}
     d.append(line)
+
+    x = """
+    <div class="box">
+        <img src="""+""+filmImage+""+""" /><br/>
+        <a style="color: #000000; font-size: 25px;"><b>"""+filmName+"""</b></a><br/>
+        <a style="color: #000000; font-size: 15px;">Fecha de estreno: <b>"""+filmDate+"""</b></a><br/>
+        <a style="color: #000000; font-size: 20px;" href="""+filmHref+">Sinopsis</a><br/>""""
+    </div> 
+    """
+    mailContent.append(x)
+
+print(mailContent)

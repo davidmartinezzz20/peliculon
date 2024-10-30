@@ -1,28 +1,37 @@
-from infoTransformer import d, filmDate, filmName, filmHref, filmImage
+from infoTransformer import mailContent
 
 body_start = """
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+
+    .box {
+
+    background-color: lightgrey;
+
+    width: 300px;
+
+    border: 10px solid black;
+
+    padding: 50px;
+
+    margin: 20px;
+
+    }
+
+</style>
 </head>
     <body>
         <h1 style="text-decoration: underline black">Las peli:</h1>
         <p></p>
 """
-content = []
-for i in d:
-    x = """
-    <img src="""+filmImage+"""/><br/>
-    <a style="color: #000000">"""+filmName+"""</a><br/>
-    <a style="color: #000000" href="""+filmHref+">Sinopsis</a><br/>""""
-    <a style="color: #000000">Fecha de estreno: """+filmDate+"""</a><br/><br/>"""
-    content.append(x)
 
 body_end = """
     </body>
 </html>
 """
 
-mailBody = body_start + ''.join(content) + body_end
+mailBody = body_start + ''.join(mailContent) + body_end
 
 print(mailBody)
