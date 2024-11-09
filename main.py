@@ -1,6 +1,5 @@
-import takeInfo, sendMail, mailBody, infoTransformer
+import takeInfo, sendMail, infoTransformer
 
 takeInfo
 infoTransformer
-mailBody
 sendMail

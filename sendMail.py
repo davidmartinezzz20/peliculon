@@ -1,7 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 from settings import importantKey
-from mailBody import mailBody
+from infoTransformer import mailBody
 
 # Define the subject and body of the email.
 subject = "New film releases incoming"
